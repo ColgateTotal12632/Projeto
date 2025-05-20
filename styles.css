@@ -889,3 +889,130 @@ form#formAvaliacao button:hover {
 .pedido-info button.cancelar-pedido:hover {
   background-color: #e14848;
 }
+
+
+
+
+.dados-perfil {
+  background-color: #5a6b82;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.dados-perfil p {
+  margin: 8px 0;
+}
+
+#editarPerfil,
+#sairPerfil {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+#editarPerfil {
+  background-color: #bcd1ea;
+}
+
+#sairPerfil {
+  background-color: #e85b5b;
+  color: white;
+}
+
+#produtosDoUsuario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
+
+.botaoAdicionarProduto {
+  background-color: #5a6b82;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.botaoAdicionarProduto:hover {
+  background-color: #4b5d73;
+}
+
+.formProduto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #dde0e5;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+
+.botaoAdicionarProduto {
+  background-color: #5a6b82;
+  color: white;
+  padding: 10px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.botaoAdicionarProduto:hover {
+  background-color: #4b5d73;
+}
+
+.form-edicao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #5a6b82;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.form-edicao input,
+.form-edicao button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.form-edicao input {
+  background-color: #dfe6f1;
+  color: black;
+}
+
+.form-edicao button {
+  background-color: #cfd8e6;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-edicao button:hover {
+  background-color: #bcd1ea;
+}

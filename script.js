@@ -22,42 +22,47 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formAvaliacao");
   const lista = document.getElementById("listaAvaliacoes");
+  const jogoId = document.body.dataset.jogo;
 
-  const carregarAvaliacoes = () => {
-    lista.innerHTML = "";
-    const avaliacoes = JSON.parse(localStorage.getItem("avaliacoes") || "[]");
+  if (form && lista && jogoId) {
+    const carregarAvaliacoes = () => {
+      lista.innerHTML = "";
+      const avaliacoes = JSON.parse(localStorage.getItem(`avaliacoes-${jogoId}`) || "[]");
 
-    avaliacoes.forEach(av => {
-      const div = document.createElement("div");
-      div.classList.add("comentario");
-      div.innerHTML = `
-        <p><strong>${av.nome}</strong> — ${"⭐".repeat(av.nota)}</p>
-        <p>${av.comentario}</p>
-      `;
-      lista.appendChild(div);
+      avaliacoes.forEach(av => {
+        const div = document.createElement("div");
+        div.classList.add("comentario");
+        div.innerHTML = `
+          <p><strong>${av.nome}</strong> — ${"⭐".repeat(av.nota)}</p>
+          <p>${av.comentario}</p>
+        `;
+        lista.appendChild(div);
+      });
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const nota = parseInt(document.getElementById("nota").value);
+      const comentario = document.getElementById("comentario").value.trim();
+
+      if (!nome || !nota || !comentario) return;
+
+      const novaAvaliacao = { nome, nota, comentario };
+
+      const avaliacoes = JSON.parse(localStorage.getItem(`avaliacoes-${jogoId}`) || "[]");
+      avaliacoes.push(novaAvaliacao);
+      localStorage.setItem(`avaliacoes-${jogoId}`, JSON.stringify(avaliacoes));
+
+      form.reset();
+      carregarAvaliacoes();
     });
-  };
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const nome = document.getElementById("nome").value.trim();
-    const nota = parseInt(document.getElementById("nota").value);
-    const comentario = document.getElementById("comentario").value.trim();
-
-    if (!nome || !nota || !comentario) return;
-
-    const novaAvaliacao = { nome, nota, comentario };
-
-    const avaliacoes = JSON.parse(localStorage.getItem("avaliacoes") || "[]");
-    avaliacoes.push(novaAvaliacao);
-    localStorage.setItem("avaliacoes", JSON.stringify(avaliacoes));
-
-    form.reset();
     carregarAvaliacoes();
-  });
-
-  carregarAvaliacoes();
+  }
 });
+
 
 
 
@@ -518,3 +523,236 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formVenda");
+  const lista = document.getElementById("listaVendas");
+
+  if (form && lista) {
+    const email = localStorage.getItem("perfil-email") || "visitante";
+
+    const carregarVendas = () => {
+      const todas = JSON.parse(localStorage.getItem("vendas") || "[]");
+      const minhas = todas.filter(p => p.email === email);
+
+      lista.innerHTML = "";
+      if (minhas.length === 0) {
+        lista.innerHTML = "<p>Você ainda não anunciou nenhum produto.</p>";
+        return;
+      }
+
+      minhas.forEach(prod => {
+        const div = document.createElement("div");
+        div.classList.add("produto");
+        div.innerHTML = `
+          <img src="${prod.imagem}" alt="${prod.nome}">
+          <h3>${prod.nome}</h3>
+          <h5>${prod.descricao}</h5>
+          <p class="preco">R$ ${prod.preco.toFixed(2)}</p>
+        `;
+        lista.appendChild(div);
+      });
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nomeProduto").value.trim();
+      const descricao = document.getElementById("descricaoProduto").value.trim();
+      const preco = parseFloat(document.getElementById("precoProduto").value);
+      const imagem = document.getElementById("imagemProduto").value.trim();
+
+      if (!nome || !descricao || !imagem || isNaN(preco)) return;
+
+      const novoProduto = { nome, descricao, preco, imagem, email };
+
+      const vendas = JSON.parse(localStorage.getItem("vendas") || "[]");
+      vendas.push(novoProduto);
+      localStorage.setItem("vendas", JSON.stringify(vendas));
+
+      form.reset();
+      carregarVendas();
+    });
+
+    carregarVendas();
+  }
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const protegido = document.body.dataset.protegido;
+  if (protegido === "true" && localStorage.getItem("usuarioLogado") !== "true") {
+    alert("Você precisa estar logado para acessar essa página.");
+    window.location.href = "index.html";
+    return;
+  }
+
+
+  const perfil = document.getElementById("dadosPerfil");
+  if (perfil) {
+    const nome = localStorage.getItem("perfil-nome") || "Não informado";
+    const email = localStorage.getItem("perfil-email") || "Não informado";
+    const telefone = localStorage.getItem("perfil-telefone") || "Não informado";
+    const nascimento = localStorage.getItem("perfil-nascimento") || "Não informado";
+    const endereco = localStorage.getItem("perfil-endereco") || "Não informado";
+
+    perfil.innerHTML = `
+      <p><strong>Nome:</strong> ${nome}</p>
+      <p><strong>E-mail:</strong> ${email}</p>
+      <p><strong>Telefone:</strong> ${telefone}</p>
+      <p><strong>Data de nascimento:</strong> ${nascimento}</p>
+      <p><strong>Endereço:</strong> ${endereco}</p>
+    `;
+  }
+
+
+  const botaoSair = document.getElementById("sairPerfil");
+  if (botaoSair) {
+    botaoSair.addEventListener("click", () => {
+      const confirmar = confirm("Deseja sair da conta?");
+      if (!confirmar) return;
+
+      localStorage.removeItem("usuarioLogado");
+      localStorage.removeItem("perfil-nome");
+      localStorage.removeItem("perfil-email");
+      localStorage.removeItem("perfil-telefone");
+      localStorage.removeItem("perfil-nascimento");
+      localStorage.removeItem("perfil-endereco");
+      window.location.href = "index.html";
+    });
+  }
+
+
+  const btnFormProduto = document.getElementById("mostrarFormProduto");
+  const formProduto = document.getElementById("formProduto");
+  const produtosContainer = document.getElementById("produtosDoUsuario");
+
+  if (btnFormProduto && formProduto) {
+    btnFormProduto.addEventListener("click", () => {
+      formProduto.style.display = formProduto.style.display === "none" ? "flex" : "none";
+    });
+  }
+
+  if (formProduto && produtosContainer) {
+    formProduto.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nomeProduto").value.trim();
+      const descricao = document.getElementById("descricaoProduto").value.trim();
+      const preco = parseFloat(document.getElementById("precoProduto").value);
+      const imagem = document.getElementById("imagemProduto").value.trim();
+      const emailUsuario = localStorage.getItem("perfil-email");
+
+      if (!nome || !descricao || !imagem || isNaN(preco)) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+      const novoProduto = {
+        id: Date.now(),
+        nome,
+        descricao,
+        preco,
+        imagem,
+        email: emailUsuario
+      };
+
+      const lista = JSON.parse(localStorage.getItem("vendas") || "[]");
+      lista.push(novoProduto);
+      localStorage.setItem("vendas", JSON.stringify(lista));
+
+      formProduto.reset();
+      formProduto.style.display = "none";
+      carregarProdutosDoUsuario();
+    });
+
+    function carregarProdutosDoUsuario() {
+      const emailUsuario = localStorage.getItem("perfil-email");
+      const lista = JSON.parse(localStorage.getItem("vendas") || "[]");
+      const meusProdutos = lista.filter(p => p.email === emailUsuario);
+
+      produtosContainer.innerHTML = "";
+
+      if (meusProdutos.length === 0) {
+        produtosContainer.innerHTML = "<p>Você ainda não adicionou produtos.</p>";
+        return;
+      }
+
+      meusProdutos.forEach(prod => {
+        const div = document.createElement("div");
+        div.classList.add("produto");
+        div.innerHTML = `
+          <img src="${prod.imagem}" alt="${prod.nome}">
+          <h3>${prod.nome}</h3>
+          <h5>${prod.descricao}</h5>
+          <p class="preco">R$ ${prod.preco.toFixed(2)}</p>
+        `;
+        produtosContainer.appendChild(div);
+      });
+    }
+
+    carregarProdutosDoUsuario();
+  }
+
+
+  const formLogin = document.getElementById("formLogin");
+  if (formLogin) {
+    formLogin.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nome = document.getElementById("loginNome").value.trim();
+      const email = document.getElementById("loginEmail").value.trim();
+
+      if (!nome || !email) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+      localStorage.setItem("usuarioLogado", "true");
+      localStorage.setItem("perfil-nome", nome);
+      localStorage.setItem("perfil-email", email);
+
+      const destino = localStorage.getItem("voltarPara") || "index.html";
+      localStorage.removeItem("voltarPara");
+      window.location.href = destino;
+    });
+  }
+
+
+  const formCadastro = document.getElementById("formCadastro");
+  if (formCadastro) {
+    formCadastro.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("cadastroNome").value.trim();
+      const email = document.getElementById("cadastroEmail").value.trim();
+      const telefone = document.getElementById("cadastroTelefone")?.value.trim() || "";
+      const nascimento = document.getElementById("cadastroNascimento")?.value.trim() || "";
+      const endereco = document.getElementById("cadastroEndereco")?.value.trim() || "";
+
+      if (!nome || !email) {
+        alert("Preencha nome e email.");
+        return;
+      }
+
+      localStorage.setItem("usuarioLogado", "true");
+      localStorage.setItem("perfil-nome", nome);
+      localStorage.setItem("perfil-email", email);
+      localStorage.setItem("perfil-telefone", telefone);
+      localStorage.setItem("perfil-nascimento", nascimento);
+      localStorage.setItem("perfil-endereco", endereco);
+
+      alert("Cadastro realizado com sucesso!");
+
+      const destino = localStorage.getItem("voltarPara") || "index.html";
+      localStorage.removeItem("voltarPara");
+      window.location.href = destino;
+    });
+  }
+});
