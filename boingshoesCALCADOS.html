@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP3 Rio PMP300 | Old School</title>
+    <title>Sapatos Boing Boing! | Old School</title>
     <link rel="shortcut icon" href="ico/ico.png">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
@@ -40,6 +40,7 @@
                 <h3>Categorias</h3>
                 <div class="linhaHorizontalMenu"></div>
             <ul>
+                <a href="roupas.html">Roupas</a>
                 <a href="acessorios.html">Acessórios</a>
                 <a href="calcados.html">Calçados</a>
                 <a href="equipamentos.html">Equipamentos</a>
@@ -51,21 +52,20 @@
 <div class="backgroundProdutos">
       <div class="paginaDoProduto">
         <div class="produtoDetalhes">
-          <img src="img/Produtos/Mp3.jpg" alt="MP3 Rio PMP300" />
+          <img src="img/Produtos/boingshoes.jpg" alt="Sapatos Boing Boing!" />
           <div class="informacoes">
-            <h2>MP3 Rio PMP300</h2>
-            <h3>R$ 1.130,82</h3>
-            <p>O primeiro MP3 player portátil da história. Lançado em 1998, foi um marco na revolução digital da música. Compacto, leve e nostálgico.</p>
+            <h2>Sapatos Boing Boing!</h2>
+            <h3>R$ 389,00</h3>
+            <p>Sapatos vendidos para crianças nos anos 60 (bem preservado).</p>
             <br><h3>Descrição do Produto</h3>
-            <p>A Fita Cassete Sony 90 Min é usada para gravar músicas ou áudios, com duração de 90 minutos (45 por lado). Funciona em qualquer toca-fitas e tem boa qualidade de som. É ideal para quem gosta de coisas retrô ou quer guardar gravações de forma simples e clássica.</p>
+            <p>Esses sapatos são uma verdadeira relíquia dos anos 60, projetados para proporcionar diversão e movimento. Com um design icônico e cores vibrantes, eles são perfeitos para quem busca um toque de nostalgia e estilo.</p>
             <br><h3>Características</h3>
             <ul>
-              <li>Marca: Rio</li>
-              <li>Modelo: PMP300</li>
-              <li>Capacidade: 32 MB (aproximadamente 8 músicas)</li>
-              <li>Conexão: USB 1.0</li>
-              <li>Cor: Prata</li>
-              <li>Peso: 150g</li>
+              <li>Material: Couro sintético</li>
+              <li>Tamanho: 38</li>
+              <li>Cor: Azul e vermelho</li>
+              <li>Conforto: Almofadado</li>
+              <li>Estilo: Casual</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -77,37 +77,36 @@
       <div class="avaliacoes">
           <h3>Avaliações dos compradores</h3>
           <div class="comentario">
-            <p><strong>Lucas Mariano da Silva Antonieto de Las Nieves.</strong> — ⭐⭐⭐⭐⭐</p>
-            <p>Produto perfeito para colecionador! Chegou bem embalado e funcionando.</p>
+            <p><strong>Laura Anal Del Rego</strong> — ⭐☆☆☆☆</p>
+            <p>Meu filho ficou com a cabeça presa no teto, muito ruim.</p>
           </div>
           <div class="comentario">
-            <p><strong>Ana Paula Roginalda Chaves Pipipi</strong> — ⭐⭐⭐⭐☆</p>
-            <p>Muito nostálgico, haha! Apenas o botão de volume estava um pouco duro.</p>
+            <p><strong>AdalbertoGirafales69</strong> — ⭐⭐⭐⭐⭐</p>
+            <p>É muito divertido ficar pulando com isso, amei!</p>
           </div>
 
         <div id="listaAvaliacoes"></div>
 
             <h4>Deixe sua avaliação</h4>
             <form id="formAvaliacao">
-            <input type="text" id="nome" placeholder="Seu nome" required />
+            <input type="text" id="nome" placeholder="Seu nome" required>
             <select id="nota" required>
-              <option value="">Nota</option>
-              <option value="1">⭐</option>
-              <option value="2">⭐⭐</option>
-              <option value="3">⭐⭐⭐</option>
-              <option value="4">⭐⭐⭐⭐</option>
-              <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
-            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
-            <button type="submit">Enviar</button>
-            </form>
+            <option value="">Nota</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐☆</option>
+            <option value="3">⭐⭐⭐☆☆</option>
+            <option value="2">⭐⭐☆☆☆</option>
+            <option value="1">⭐☆☆☆☆</option>
+          </select>
+          <textarea id="comentario" rows="3" placeholder="Escreva seu comentário..." required></textarea>
+          <button type="submit">Enviar avaliação</button>
+          </form>
+    </div>
 
-            <div id="listaAvaliacoes"></div>
-          </div>
         </div>
       </div>
-    </div> 
-
+    </div>
+</div>
 
 <footer>
     <div class="rodape">
@@ -145,14 +144,14 @@
 
 <script>
     const produto = {
-      id: "mp3Antigo",
-      nome: "MP3 Rio PMP300",
-      preco: 1130.82,
-      imagem: "img/Produtos/Mp3.jpg",
+      id: "boingshoes",
+      nome: "Sapatos Boing Boing!",
+      preco: 389.00,
+      imagem: "img/Produtos/boingshoes.jpg",
       quantidade: 1
     };
   </script>
-  <body data-jogo="mp3">
+  <body data-jogo="boingshoes">
 </body>
 
 </html>
