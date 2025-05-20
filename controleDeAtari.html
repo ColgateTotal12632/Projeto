@@ -56,6 +56,15 @@
             <h2>Joystick Atari CX40</h2>
             <h3>R$ 159,90</h3>
             <p>Controle clássico do Atari 2600.</p>
+            <br><h3>Descrição do Produto</h3>
+            <p>O Joystick Atari CX40 é um controle clássico lançado em 1977 para os consoles Atari. Tem uma alavanca de 8 direções e um botão, simples e fácil de usar. Foi muito popular e funciona com vários sistemas antigos. É um ícone dos jogos retrô.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Modelo: CX40</li>
+              <li>Compatível com Atari 2600 e outros consoles antigos</li>
+              <li>Conexão: P2</li>
+              <li>Cor: Preto</li>
+              <li>Material: Plástico resistente</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -78,10 +87,30 @@
             <p><strong>JustoBolaDeFrogo</strong> — ⭐⭐☆☆☆</p>
             <p>A entrega demorou demais... Sai Fora!</p>
           </div>
+        
+          <div id="listaAvaliacoes"></div>
+
+            <h4>Deixe sua avaliação</h4>
+            <form id="formAvaliacao">
+            <input type="text" id="nome" placeholder="Seu nome" required />
+            <select id="nota" required>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
+
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-      </div>
-</div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -115,6 +144,8 @@
     </div>
 </footer>
 
+
+
   <script>
     const produto = {
       id: "controleAtari",
@@ -124,6 +155,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="controleAtari">
 </body>
 
 </html>

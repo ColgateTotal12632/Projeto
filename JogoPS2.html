@@ -56,6 +56,15 @@
             <h2>Shadow of the Colossus PS2</h2>
             <h3>R$ 35,90</h3>
             <p>SHADOW OF THE COLOSSUS é uma jornada espetacular por terras antigas em busca de feras gigantes. Armado com uma espada e um arco, explore os vastos terrenos e revele cada Colossus, cada um com um desafio único para testar sua inteligência, determinação e habilidade.</p>
+            <br><h3>Descrição do Produto</h3>
+            <p>Shadow of the Colossus (PS2) é um jogo de aventura onde você controla um personagem que precisa derrotar enormes criaturas chamadas colossos para salvar uma garota. O jogo tem gráficos impressionantes para a época, cenários vastos e uma história emocionante, focando em exploração e batalhas épicas. É um clássico muito elogiado por sua arte e narrativa.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Console: PlayStation 2</li>
+              <li>Gênero: Aventura/ação</li>
+              <li>Data de Lançamento: 2005</li>
+              <li>Desenvolvedora: Team Ico</li>
+              <li>Distribuidora: Sony Computer Entertainment</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -79,24 +88,25 @@
 
             <h4>Deixe sua avaliação</h4>
             <form id="formAvaliacao">
-            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="text" id="nome" placeholder="Seu nome" required />
             <select id="nota" required>
-            <option value="">Nota</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐☆</option>
-            <option value="3">⭐⭐⭐☆☆</option>
-            <option value="2">⭐⭐☆☆☆</option>
-            <option value="1">⭐☆☆☆☆</option>
-          </select>
-          <textarea id="comentario" rows="3" placeholder="Escreva seu comentário..." required></textarea>
-          <button type="submit">Enviar avaliação</button>
-          </form>
-    </div>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
 
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-    </div>
-</div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -130,6 +140,8 @@
     </div>
 </footer>
 
+
+
 <script>
     const produto = {
       id: "jogoPS2",
@@ -139,6 +151,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="JogoPS2">
 </body>
 
 </html>

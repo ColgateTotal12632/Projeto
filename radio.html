@@ -56,6 +56,15 @@
             <h2>Rádio de Bolso Panasonic</h2>
             <h3>R$ 89,90</h3>
             <p>Rádio AM/FM de bolso muito popular nos anos 80.</p>
+            <br><h3>Descrição do Produto</h3>
+            <p>O Rádio de Bolso Panasonic RF-P50D é um aparelho compacto e leve, ideal para ouvir suas estações AM/FM favoritas em qualquer lugar. Com sintonizador analógico e indicador de sintonia LED, facilita a busca por estações. Funciona com duas pilhas AA (não inclusas) e possui alto-falante embutido, além de entrada para fones de ouvido. Perfeito para quem busca praticidade e qualidade sonora em um design portátil.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Modelo: RF-P50D</li>
+              <li>Tipo: Rádio AM/FM</li>
+              <li>Alimentação: 2 pilhas AA (não inclusas)</li>
+              <li>Dimensões: 10 x 6 x 3 cm</li>
+              <li>Peso: 200g</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -74,10 +83,30 @@
             <p><strong>Marauder</strong> — ⭐⭐⭐⭐⭐</p>
             <p>Bom demais!</p>
           </div>
+        
+          <div id="listaAvaliacoes"></div>
+
+            <h4>Deixe sua avaliação</h4>
+            <form id="formAvaliacao">
+            <input type="text" id="nome" placeholder="Seu nome" required />
+            <select id="nota" required>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
+
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -111,6 +140,8 @@
     </div>
 </footer>
 
+
+
 <script>
     const produto = {
       id: "radioAntigo",
@@ -120,6 +151,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="radio">
 </body>
 
 </html>

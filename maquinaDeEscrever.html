@@ -55,14 +55,25 @@
           <div class="informacoes">
             <h2>Máquina De Escrever ROYAL 10 ano de 1924</h2>
             <h3>R$ 4999,90</h3>
-            <p>Clássica máquina de escrever antiga.</p>
-            <div class="botoesDoProduto">
+            <p>Clássica máquina de escrever antiga.</p><br>
+            <h3>Descrição do Produto</h3>
+          <p>A Máquina de Escrever Royal 10 (1924) é um modelo antigo e clássico usado para digitar textos antes dos computadores. Feita com materiais resistentes, tem teclas mecânicas que imprimem letras no papel ao pressionar. É um objeto histórico, perfeito para colecionadores ou quem gosta de peças vintage.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Marca: Royal</li>
+              <li>Ano: 1924</li>
+              <li>Modelo: Royal 10</li>
+              <li>Cor: Preto</li>
+              <li>Material: Metal e Plástico</li>
+              <li>Peso: 5 kg</li>
+          <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
               <button id="botaocomprar">Comprar Agora</button>
             </div>
           </div>
         </div>
+        
 
       <div class="avaliacoes">
           <h3>Avaliações dos compradores</h3>
@@ -79,24 +90,25 @@
 
             <h4>Deixe sua avaliação</h4>
             <form id="formAvaliacao">
-            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="text" id="nome" placeholder="Seu nome" required />
             <select id="nota" required>
-            <option value="">Nota</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐☆</option>
-            <option value="3">⭐⭐⭐☆☆</option>
-            <option value="2">⭐⭐☆☆☆</option>
-            <option value="1">⭐☆☆☆☆</option>
-          </select>
-          <textarea id="comentario" rows="3" placeholder="Escreva seu comentário..." required></textarea>
-          <button type="submit">Enviar avaliação</button>
-          </form>
-    </div>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
 
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-    </div>
-</div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -130,6 +142,8 @@
     </div>
 </footer>
 
+
+
 <script>
     const produto = {
       id: "maquinaDeEscrever",
@@ -139,6 +153,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="maquinaDeEscrever">
 </body>
 
 </html>

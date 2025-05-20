@@ -56,6 +56,16 @@
             <h2>Câmera Polaroid 600</h2>
             <h3>R$ 549,00</h3>
             <p>Tira fotos instantâneas – verdadeiro ícone vintage.</p>
+            <br><h3>Descrição do Produto</h3>
+            <p>A Câmera Polaroid 600 é um modelo clássico de fotografia instantânea, popular nas décadas de 1980 e 1990. Fácil de usar, ela tira fotos que revelam sozinhas em poucos minutos, sem precisar de laboratório. Possui flash embutido, lente de foco fixo e controle simples de exposição. Utiliza filmes Polaroid 600, que já vêm com bateria integrada, garantindo praticidade. Ideal para quem curte o estilo retrô e quer fotos físicas na hora.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Modelo: Polaroid 600</li>
+              <li>Tipo: Câmera instantânea</li>
+              <li>Flash: Embutido</li>
+              <li>Lente: Foco fixo</li>
+              <li>Filme: Polaroid 600 (não incluído)</li>
+              <li>Dimensões: 10 x 12 x 15 cm</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -78,10 +88,30 @@
             <p><strong>Eduardo M</strong> — ⭐⭐⭐⭐☆</p>
             <p>Muito bom! Pena que não da pra tirar print...</p>
           </div>
+        
+          <div id="listaAvaliacoes"></div>
+
+            <h4>Deixe sua avaliação</h4>
+            <form id="formAvaliacao">
+            <input type="text" id="nome" placeholder="Seu nome" required />
+            <select id="nota" required>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
+
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -115,6 +145,8 @@
     </div>
 </footer>
 
+
+
   <script>
     const produto = {
       id: "polaroid",
@@ -124,6 +156,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="polaroid">
 </body>
 
 </html>

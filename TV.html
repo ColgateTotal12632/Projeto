@@ -56,6 +56,16 @@
             <h2>TV Portátil Philco Retrô</h2>
             <h3>R$ 848,42</h3>
             <p>Modelo com antena, tela pequena e botões físicos.</p>
+            <br><h3>Descrição do Produto</h3>
+            <p>A TV Portátil Philco Retrô é uma televisão compacta de 14 polegadas com design clássico, ideal para quem aprecia o estilo vintage. Equipada com tela de tubo e acabamento em cinza, ela oferece entrada RCA para conectar DVD, videogame ou conversor digital, além de ser bivolt automática. É perfeita para colecionadores ou para criar um ambiente nostálgico em casa.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Modelo: Philco Retrô 14”</li>
+              <li>Tela: 14 polegadas</li>
+              <li>Resolução: 640 x 480 pixels</li>
+              <li>Entradas: RCA (áudio e vídeo)</li>
+              <li>Fonte de energia: Bivolt automática</li>
+              <li>Dimensões: 35 cm x 25 cm x 20 cm</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -79,23 +89,25 @@
 
             <h4>Deixe sua avaliação</h4>
             <form id="formAvaliacao">
-            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="text" id="nome" placeholder="Seu nome" required />
             <select id="nota" required>
-            <option value="">Nota</option>
-            <option value="5">⭐⭐⭐⭐⭐</option>
-            <option value="4">⭐⭐⭐⭐☆</option>
-            <option value="3">⭐⭐⭐☆☆</option>
-            <option value="2">⭐⭐☆☆☆</option>
-            <option value="1">⭐☆☆☆☆</option>
-          </select>
-          <textarea id="comentario" rows="3" placeholder="Escreva seu comentário..." required></textarea>
-          <button type="submit">Enviar avaliação</button>
-          </form>
-    </div>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
+
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -129,6 +141,8 @@
     </div>
 </footer>
 
+
+
   <script>
     const produto = {
       id: "tvPhilco",
@@ -138,6 +152,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="tvPhilco">
 </body>
 
 </html>

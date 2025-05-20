@@ -56,6 +56,15 @@
             <h2>Fita Cassete Sony 90 Min</h2>
             <h3>R$ 39,90</h3>
             <p>Ícone das mixtapes dos anos 80/90</p>
+            <br><h3>Descrição do Produto</h3>
+            <p>A Fita Cassete Sony 90 Min é usada para gravar músicas ou áudios, com duração de 90 minutos (45 por lado). Funciona em qualquer toca-fitas e tem boa qualidade de som. É ideal para quem gosta de coisas retrô ou quer guardar gravações de forma simples e clássica.</p>
+            <br><h3>Características</h3>
+            <ul>
+              <li>Marca: Sony</li>
+              <li>Duração: 90 minutos (45 minutos por lado)</li>
+              <li>Tipo: Fita cassete analógica</li>
+              <li>Compatibilidade: Toca-fitas padrão</li>
+              <li>Cor: Preto com detalhes em prata</li>
             <div class="botoesDoProduto">
               <button id="botaoFavorito">❤️ Favoritar</button>
               <button id="botaocarrinho">Adicionar ao Carrinho</button>
@@ -74,10 +83,31 @@
             <p><strong>Felipe Neto</strong> — ⭐☆☆☆☆</p>
             <p>Muito ruim! Ninguém merece comprar isso.</p>
           </div>
+
+
+            <div id="listaAvaliacoes"></div>
+
+            <h4>Deixe sua avaliação</h4>
+            <form id="formAvaliacao">
+            <input type="text" id="nome" placeholder="Seu nome" required />
+            <select id="nota" required>
+              <option value="">Nota</option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+            <textarea id="comentario" placeholder="Escreva sua avaliação..." required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
+
+            <div id="listaAvaliacoes"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div> 
+
 
 <footer>
     <div class="rodape">
@@ -111,6 +141,8 @@
     </div>
 </footer>
 
+
+
   <script>
     const produto = {
       id: "fitaCassete",
@@ -120,6 +152,7 @@
       quantidade: 1
     };
   </script>
+  <body data-jogo="fitaCassete">
 </body>
 
 </html>
